@@ -1,0 +1,65 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CRM copy",
+		"_postman_id": "0d7a9510-c2a1-902a-584e-0a9bafa045e7",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"description": "",
+			"item": [
+				{
+					"name": "Start - http://localhost:8080/customer/save",
+					"request": {
+						"url": "http://localhost:8080/customer/save",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 87486253998,\r\n    \"name\": \"Sergio Moro Presidente\",\r\n    \"address\": \"Rua Brasilia, 100 - Curitiba\",\r\n    \"dateOfBirth\": \"1971-03-02\"\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/customer/read",
+					"request": {
+						"url": "http://localhost:8080/customer/read/87486253998",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"87486253887\",\r\n    \"name\": \"Sergio Moro Presidente\",\r\n    \"address\": \"Rua Brasilia, 100 - Curitiba\" ,\r\n    \"dateOfBirth\": \"07-02-1971\"\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/customer/list",
+					"request": {
+						"url": "http://localhost:8080/customer/list",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf\": \"80982409915\"\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
