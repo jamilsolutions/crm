@@ -6,8 +6,10 @@ import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.jms.core.JmsOperations;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -41,6 +43,7 @@ public class CustomerController {
 			throw new MethodArgumentNotValidException(null, null);
 		}
 		customer = this.customerService.save(customer);
+
 		return customer;
 	}
 

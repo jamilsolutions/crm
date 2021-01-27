@@ -1,7 +1,7 @@
 {
 	"variables": [],
 	"info": {
-		"name": "CRM copy",
+		"name": "CRM",
 		"_postman_id": "0d7a9510-c2a1-902a-584e-0a9bafa045e7",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -55,6 +55,60 @@
 							"mode": "raw",
 							"raw": "{\r\n    \"cpf\": \"80982409915\"\r\n}"
 						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/customer/save",
+					"request": {
+						"url": "http://localhost:8080/customer/save",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 80982409915,\r\n    \"name\": \"Mohamed Jammal\",\r\n    \"address\": \"Rua Santa Bernadethe, 201 - Curitiba\" ,\r\n    \"dateOfBirth\": \"07-02-1971\"\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Demo",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:18080/send",
+					"request": {
+						"url": "http://localhost:18080/send",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CTA",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:8081/send",
+					"request": {
+						"url": "http://localhost:18080/send",
+						"method": "GET",
+						"header": [],
+						"body": {},
 						"description": ""
 					},
 					"response": []

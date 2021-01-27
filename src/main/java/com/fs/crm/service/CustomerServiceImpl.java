@@ -5,14 +5,24 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.jms.core.JmsOperations;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fs.crm.bom.Customer;
 import com.fs.crm.db.CustomerRepository;
 import com.fs.crm.util.IDUtil;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
+	
+	@Value("${crm.mq.queue-name}")
+    private String queueName;
+	
+	@Autowired
+	private JmsOperations jmsOperations;
 	
 	@Autowired
 	private CustomerRepository customerRepository;
@@ -27,8 +37,20 @@ public class CustomerServiceImpl implements CustomerService {
 			customer = customerRepository.save(customer); // Update
 		} else {
 			customer = customerRepository.save(customer); // Insert
+			
+			String json = convertToJson(customer);
+			
+			
+			jmsOperations.convertAndSend(queueName, json);			
 		}
 		return customer;
+	}
+
+	private String convertToJson(Customer customer) throws JsonProcessingException {
+		//Object mapper instance
+		ObjectMapper mapper = new ObjectMapper();
+		//Convert POJO to JSON
+		return mapper.writeValueAsString(customer);
 	}
 
 	@Override
