@@ -38,8 +38,6 @@ dependencies {
 	runtimeOnly 'com.h2database:h2'	
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    
-	
 }
 
 bootJar {

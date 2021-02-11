@@ -29,10 +29,14 @@ public class Customer implements Serializable {
 	private String name;
 	
 	@Column 
+	@NotBlank(message = "Email is a required field")
+	private String email;
+	
+	@Column 
 	@NotBlank(message = "Address is a required field")
 	private String address;
 	
-	@Column(name = "dateOfBirth")
+	@Column
 	@NotNull(message = "Date of birth is a required field")
 	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date dateOfBirth;
@@ -48,6 +52,12 @@ public class Customer implements Serializable {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getAddress() {
 		return address;

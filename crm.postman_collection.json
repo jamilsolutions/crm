@@ -25,7 +25,47 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 87486253998,\r\n    \"name\": \"Sergio Moro Presidente\",\r\n    \"address\": \"Rua Brasilia, 100 - Curitiba\",\r\n    \"dateOfBirth\": \"1971-03-02\"\r\n}"
+							"raw": "{\r\n    \"id\": 8748625342,\r\n    \"name\": \"Sergio Moro Presidente\",\r\n    \"email\": \"storelite@gmail.com\",\r\n    \"address\": \"Rua Brasilia, 100 - Curitiba\",\r\n    \"dateOfBirth\": \"1971-03-02\"\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "2. http://localhost:8080/customer/save",
+					"request": {
+						"url": "http://localhost:8080/customer/save",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 80982409915,\r\n    \"name\": \"Mohamed Jammal\",\r\n    \"email\": \"jamilsolutions@gmail.com\",\r\n    \"address\": \"Rua Santa Bernadethe, 201 - Curitiba\",\r\n    \"dateOfBirth\": \"07-02-1971\"\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "3. http://localhost:8080/customer/save ",
+					"request": {
+						"url": "http://localhost:8080/customer/save",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 80982409915,\r\n    \"name\": \"Mohamed Jammal\",\r\n    \"email\": \"jamilsolutions@gmail.com\",\r\n    \"address\": \"Rua Santa Bernadethe, 201 - Curitiba\",\r\n    \"dateOfBirth\": \"07-02-1971\"\r\n}"
 						},
 						"description": ""
 					},
@@ -60,20 +100,14 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/customer/save",
+					"name": "http://localhost:8080/customer/delete",
 					"request": {
-						"url": "http://localhost:8080/customer/save",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
+						"url": "http://localhost:8080/customer/delete/80982409915",
+						"method": "DELETE",
+						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 80982409915,\r\n    \"name\": \"Mohamed Jammal\",\r\n    \"address\": \"Rua Santa Bernadethe, 201 - Curitiba\" ,\r\n    \"dateOfBirth\": \"07-02-1971\"\r\n}"
+							"raw": "{\r\n    \"id\": \"87486253887\",\r\n    \"name\": \"Sergio Moro Presidente\",\r\n    \"address\": \"Rua Brasilia, 100 - Curitiba\" ,\r\n    \"dateOfBirth\": \"07-02-1971\"\r\n}"
 						},
 						"description": ""
 					},
@@ -87,23 +121,6 @@
 			"item": [
 				{
 					"name": "http://localhost:18080/send",
-					"request": {
-						"url": "http://localhost:18080/send",
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"description": ""
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "CTA",
-			"description": "",
-			"item": [
-				{
-					"name": "http://localhost:8081/send",
 					"request": {
 						"url": "http://localhost:18080/send",
 						"method": "GET",

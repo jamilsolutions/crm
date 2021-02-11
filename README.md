@@ -21,7 +21,7 @@ Customer Relationship Management microservices is the Service & API Design Model
    ./gradlew bootJar  
    
 4. Run the project with the command:
-   cd /build/libs/
+   cd build/libs/
    java -jar crm-0.0.1-SNAPSHOT.jar
    
 5. Open Postman and import the crm.postman_collection.json collection file:
